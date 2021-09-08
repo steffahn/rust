@@ -119,7 +119,7 @@ impl<I: Iterator<Item = u16>> Iterator for DecodeUtf16<I> {
 
     #[inline]
     fn size_hint(&self) -> (usize, Option<usize>) {
-        let (low, high) = self.iter.size_hint();
+        let (mut low, mut high) = self.iter.size_hint();
         // we could be entirely valid surrogates (2 elements per
         // char), or entirely non-surrogates (1 element per char)
         //
@@ -127,7 +127,17 @@ impl<I: Iterator<Item = u16>> Iterator for DecodeUtf16<I> {
         // additional number in `self.buf`.
         // On odd lower bound, at least one element must stay unpaired
         // (with other elements from `self.iter`).
-        (low.div_ceil(2), try { high?.checked_add(1)? })
+        //
+        // `self.buf` will never contain the first part of a surrogate,
+        // so the presence of `buf == Some(...)` always means +1
+        // on lower and upper bound.
+
+        low = low.div_ceil(2);
+        if self.buf.is_some() {
+            low += 1;
+            high = try { high?.checked_add(1)? }
+        }
+        (low, high)
     }
 }
 
