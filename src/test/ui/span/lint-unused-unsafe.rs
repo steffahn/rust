@@ -1,8 +1,8 @@
 // Exercise the unused_unsafe attribute in some positive and negative cases
 
-// revisions: mir thir
-// [thir]compile-flags: -Zthir-unsafeck
-
+// revisions: mir
+// // revisions: mir thir
+// // [thir]compile-flags: -Zthir-unsafeck
 #![allow(dead_code)]
 #![deny(unused_unsafe)]
 
@@ -22,8 +22,8 @@ unsafe fn bad3() { unsafe {} }           //~ ERROR: unnecessary `unsafe` block
 fn bad4() { unsafe { callback(||{}) } }  //~ ERROR: unnecessary `unsafe` block
 unsafe fn bad5() { unsafe { unsf() } }   //~ ERROR: unnecessary `unsafe` block
 fn bad6() {
-    unsafe {                             // don't put the warning here
-        unsafe {                         //~ ERROR: unnecessary `unsafe` block
+    unsafe {                             //~ ERROR: unnecessary `unsafe` block
+        unsafe {                         // don't put the warning here
             unsf()
         }
     }

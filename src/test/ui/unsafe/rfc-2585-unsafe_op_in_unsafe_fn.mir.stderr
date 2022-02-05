@@ -76,12 +76,10 @@ LL |     unsafe {}
    |     ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/rfc-2585-unsafe_op_in_unsafe_fn.rs:47:14
+  --> $DIR/rfc-2585-unsafe_op_in_unsafe_fn.rs:47:5
    |
 LL |     unsafe { unsafe { unsf() } }
-   |     ------   ^^^^^^ unnecessary `unsafe` block
-   |     |
-   |     because it's nested under this `unsafe` block
+   |     ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
   --> $DIR/rfc-2585-unsafe_op_in_unsafe_fn.rs:58:5
