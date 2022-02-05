@@ -28,7 +28,7 @@ pub struct UnsafetyChecker<'a, 'tcx> {
     ///
     /// The keys are the used `unsafe` blocks, the boolean flag indicates whether
     /// or not any of the usages happen at a place that doesn't allow `unsafe_op_in_unsafe_fn`.
-    used_unsafe_blocks: FxHashMap<hir::HirId, bool>,
+    used_unsafe_blocks: FxHashMap<HirId, bool>,
 }
 
 impl<'a, 'tcx> UnsafetyChecker<'a, 'tcx> {
@@ -263,7 +263,7 @@ impl<'tcx> UnsafetyChecker<'_, 'tcx> {
     fn register_violations<'a>(
         &mut self,
         violations: impl ExactSizeIterator<Item = &'a UnsafetyViolation>,
-        new_used_unsafe_blocks: impl Iterator<Item = (&'a hir::HirId, &'a bool)>,
+        new_used_unsafe_blocks: impl Iterator<Item = (&'a HirId, &'a bool)>,
     ) {
         let safety = self.body.source_scopes[self.source_info.scope]
             .local_data
@@ -403,9 +403,9 @@ enum Context {
 
 struct UnusedUnsafeVisitor<'a, 'tcx> {
     tcx: TyCtxt<'tcx>,
-    used_unsafe_blocks: &'a FxHashMap<hir::HirId, bool>,
+    used_unsafe_blocks: &'a FxHashMap<HirId, bool>,
     context: Context,
-    unused_unsafe: &'a mut Vec<(hir::HirId, UnusedUnsafe)>,
+    unused_unsafe: &'a mut Vec<(HirId, UnusedUnsafe)>,
 }
 
 impl<'tcx> intravisit::Visitor<'tcx> for UnusedUnsafeVisitor<'_, 'tcx> {
@@ -444,7 +444,7 @@ impl<'tcx> intravisit::Visitor<'tcx> for UnusedUnsafeVisitor<'_, 'tcx> {
 fn check_unused_unsafe(
     tcx: TyCtxt<'_>,
     def_id: LocalDefId,
-    used_unsafe_blocks: &FxHashMap<hir::HirId, bool>,
+    used_unsafe_blocks: &FxHashMap<HirId, bool>,
 ) -> Vec<(HirId, UnusedUnsafe)> {
     let hir_id = tcx.hir().local_def_id_to_hir_id(def_id);
     let body_id = tcx.hir().maybe_body_owned_by(hir_id);
@@ -506,7 +506,7 @@ fn unsafety_check_result<'tcx>(
     })
 }
 
-fn report_unused_unsafe(tcx: TyCtxt<'_>, kind: UnusedUnsafe, id: hir::HirId) {
+fn report_unused_unsafe(tcx: TyCtxt<'_>, kind: UnusedUnsafe, id: HirId) {
     let span = tcx.sess.source_map().guess_head_span(tcx.hir().span(id));
     tcx.struct_span_lint_hir(UNUSED_UNSAFE, id, span, |lint| {
         let msg = "unnecessary `unsafe` block";
