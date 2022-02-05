@@ -758,5 +758,5 @@ mod additional_tests_extra {
         let _x: [(); unsafe { unsafe { size() } }] = []; //~ ERROR: unnecessary `unsafe` block
     }
 
-    const unsafe fn size() -> usize { 0 } 
+    const unsafe fn size() -> usize { 0 }
 }
