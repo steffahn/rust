@@ -1140,5 +1140,17 @@ LL |     async unsafe fn async_blocks() {
 LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
 
-error: aborting due to 140 previous errors
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:754:22
+   |
+LL |         let _x: [(); unsafe { 0 }] = [];
+   |                      ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:758:22
+   |
+LL |         let _x: [(); unsafe { unsafe { size() } }] = [];
+   |                      ^^^^^^ unnecessary `unsafe` block
+
+error: aborting due to 142 previous errors
 

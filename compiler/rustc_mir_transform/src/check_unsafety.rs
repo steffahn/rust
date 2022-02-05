@@ -439,6 +439,8 @@ impl<'tcx> intravisit::Visitor<'tcx> for UnusedUnsafeVisitor<'_, 'tcx> {
         }
         intravisit::walk_block(self, block);
     }
+
+    fn visit_anon_const(&mut self, _c: &'tcx hir::AnonConst) {}
 }
 
 fn check_unused_unsafe(

@@ -745,4 +745,18 @@ mod additional_tests_extra {
             }};
         }
     }
+
+    fn used_unsafe_in_const() {
+        let _x: [(); unsafe { size() }] = [];
+    }
+
+    fn unused_unsafe_in_const_1() {
+        let _x: [(); unsafe { 0 }] = []; //~ ERROR: unnecessary `unsafe` block
+    }
+
+    fn unused_unsafe_in_const_2() {
+        let _x: [(); unsafe { unsafe { size() } }] = []; //~ ERROR: unnecessary `unsafe` block
+    }
+
+    const unsafe fn size() -> usize { 0 } 
 }
