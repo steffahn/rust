@@ -1,35 +1,35 @@
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:19:13
+  --> $DIR/lint-unused-unsafe.rs:23:13
    |
 LL | fn bad1() { unsafe {} }
    |             ^^^^^^ unnecessary `unsafe` block
    |
 note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:7:9
+  --> $DIR/lint-unused-unsafe.rs:11:9
    |
 LL | #![deny(unused_unsafe)]
    |         ^^^^^^^^^^^^^
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:20:13
+  --> $DIR/lint-unused-unsafe.rs:24:13
    |
 LL | fn bad2() { unsafe { bad1() } }
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:21:20
+  --> $DIR/lint-unused-unsafe.rs:25:20
    |
 LL | unsafe fn bad3() { unsafe {} }
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:22:13
+  --> $DIR/lint-unused-unsafe.rs:26:13
    |
 LL | fn bad4() { unsafe { callback(||{}) } }
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:23:20
+  --> $DIR/lint-unused-unsafe.rs:27:20
    |
 LL | unsafe fn bad5() { unsafe { unsf() } }
    | ----------------   ^^^^^^ unnecessary `unsafe` block
@@ -37,19 +37,19 @@ LL | unsafe fn bad5() { unsafe { unsf() } }
    | because it's nested under this `unsafe` fn
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:25:5
+  --> $DIR/lint-unused-unsafe.rs:29:5
    |
 LL |     unsafe {
    |     ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:32:5
+  --> $DIR/lint-unused-unsafe.rs:36:5
    |
 LL |     unsafe {
    |     ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:33:9
+  --> $DIR/lint-unused-unsafe.rs:37:9
    |
 LL | unsafe fn bad7() {
    | ---------------- because it's nested under this `unsafe` fn
@@ -58,37 +58,37 @@ LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:67:9
+  --> $DIR/lint-unused-unsafe.rs:71:9
    |
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:76:9
+  --> $DIR/lint-unused-unsafe.rs:80:9
    |
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:77:13
+  --> $DIR/lint-unused-unsafe.rs:81:13
    |
 LL |             unsafe {}
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:78:13
+  --> $DIR/lint-unused-unsafe.rs:82:13
    |
 LL |             unsafe {}
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:83:9
+  --> $DIR/lint-unused-unsafe.rs:87:9
    |
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:93:13
+  --> $DIR/lint-unused-unsafe.rs:97:13
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -97,7 +97,7 @@ LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:94:13
+  --> $DIR/lint-unused-unsafe.rs:98:13
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -106,7 +106,7 @@ LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:95:13
+  --> $DIR/lint-unused-unsafe.rs:99:13
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -115,7 +115,7 @@ LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:105:17
+  --> $DIR/lint-unused-unsafe.rs:109:17
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -124,13 +124,13 @@ LL |                 unsafe { unsf() }
    |                 ^^^^^^ unnecessary `unsafe` block
    |
 note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:103:20
+  --> $DIR/lint-unused-unsafe.rs:107:20
    |
 LL |             #[deny(unused_unsafe)]
    |                    ^^^^^^^^^^^^^
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:106:17
+  --> $DIR/lint-unused-unsafe.rs:110:17
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -139,7 +139,7 @@ LL |                 unsafe { unsf() }
    |                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:107:17
+  --> $DIR/lint-unused-unsafe.rs:111:17
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -148,37 +148,37 @@ LL |                 unsafe { unsf() }
    |                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:117:9
+  --> $DIR/lint-unused-unsafe.rs:121:9
    |
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:127:9
+  --> $DIR/lint-unused-unsafe.rs:131:9
    |
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:128:13
+  --> $DIR/lint-unused-unsafe.rs:132:13
    |
 LL |             unsafe {}
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:129:13
+  --> $DIR/lint-unused-unsafe.rs:133:13
    |
 LL |             unsafe {}
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:135:9
+  --> $DIR/lint-unused-unsafe.rs:139:9
    |
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:146:13
+  --> $DIR/lint-unused-unsafe.rs:150:13
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -187,7 +187,7 @@ LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:147:13
+  --> $DIR/lint-unused-unsafe.rs:151:13
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -196,7 +196,7 @@ LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:148:13
+  --> $DIR/lint-unused-unsafe.rs:152:13
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -205,132 +205,7 @@ LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:159:17
-   |
-LL |         unsafe {
-   |         ------ because it's nested under this `unsafe` block
-...
-LL |                 unsafe { unsf() }
-   |                 ^^^^^^ unnecessary `unsafe` block
-   |
-note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:157:20
-   |
-LL |             #[deny(unused_unsafe)]
-   |                    ^^^^^^^^^^^^^
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:160:17
-   |
-LL |         unsafe {
-   |         ------ because it's nested under this `unsafe` block
-...
-LL |                 unsafe { unsf() }
-   |                 ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:161:17
-   |
-LL |         unsafe {
-   |         ------ because it's nested under this `unsafe` block
-...
-LL |                 unsafe { unsf() }
-   |                 ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:171:9
-   |
-LL |         unsafe {
-   |         ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:181:9
-   |
-LL |         unsafe {
-   |         ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:182:13
-   |
-LL |             unsafe {}
-   |             ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:183:13
-   |
-LL |             unsafe {}
-   |             ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:189:9
-   |
-LL |         unsafe {
-   |         ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:190:13
-   |
-LL |     unsafe fn granularity_2() {
-   |     ------------------------- because it's nested under this `unsafe` fn
-LL |         unsafe {
-LL |             unsafe { unsf() }
-   |             ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:191:13
-   |
-LL |     unsafe fn granularity_2() {
-   |     ------------------------- because it's nested under this `unsafe` fn
-...
-LL |             unsafe { unsf() }
-   |             ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:192:13
-   |
-LL |     unsafe fn granularity_2() {
-   |     ------------------------- because it's nested under this `unsafe` fn
-...
-LL |             unsafe { unsf() }
-   |             ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:198:9
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-LL |         unsafe {
-   |         ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:200:13
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-...
-LL |             unsafe { unsf() }
-   |             ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:201:13
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-...
-LL |             unsafe { unsf() }
-   |             ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:202:13
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-...
-LL |             unsafe { unsf() }
-   |             ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:213:17
+  --> $DIR/lint-unused-unsafe.rs:163:17
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -339,13 +214,13 @@ LL |                 unsafe { unsf() }
    |                 ^^^^^^ unnecessary `unsafe` block
    |
 note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:211:20
+  --> $DIR/lint-unused-unsafe.rs:161:20
    |
 LL |             #[deny(unused_unsafe)]
    |                    ^^^^^^^^^^^^^
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:214:17
+  --> $DIR/lint-unused-unsafe.rs:164:17
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -354,7 +229,7 @@ LL |                 unsafe { unsf() }
    |                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:215:17
+  --> $DIR/lint-unused-unsafe.rs:165:17
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -363,13 +238,138 @@ LL |                 unsafe { unsf() }
    |                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:235:9
+  --> $DIR/lint-unused-unsafe.rs:175:9
    |
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:247:9
+  --> $DIR/lint-unused-unsafe.rs:185:9
+   |
+LL |         unsafe {
+   |         ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:186:13
+   |
+LL |             unsafe {}
+   |             ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:187:13
+   |
+LL |             unsafe {}
+   |             ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:193:9
+   |
+LL |         unsafe {
+   |         ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:194:13
+   |
+LL |     unsafe fn granularity_2() {
+   |     ------------------------- because it's nested under this `unsafe` fn
+LL |         unsafe {
+LL |             unsafe { unsf() }
+   |             ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:195:13
+   |
+LL |     unsafe fn granularity_2() {
+   |     ------------------------- because it's nested under this `unsafe` fn
+...
+LL |             unsafe { unsf() }
+   |             ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:196:13
+   |
+LL |     unsafe fn granularity_2() {
+   |     ------------------------- because it's nested under this `unsafe` fn
+...
+LL |             unsafe { unsf() }
+   |             ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:202:9
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+LL |         unsafe {
+   |         ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:204:13
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+...
+LL |             unsafe { unsf() }
+   |             ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:205:13
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+...
+LL |             unsafe { unsf() }
+   |             ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:206:13
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+...
+LL |             unsafe { unsf() }
+   |             ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:217:17
+   |
+LL |         unsafe {
+   |         ------ because it's nested under this `unsafe` block
+...
+LL |                 unsafe { unsf() }
+   |                 ^^^^^^ unnecessary `unsafe` block
+   |
+note: the lint level is defined here
+  --> $DIR/lint-unused-unsafe.rs:215:20
+   |
+LL |             #[deny(unused_unsafe)]
+   |                    ^^^^^^^^^^^^^
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:218:17
+   |
+LL |         unsafe {
+   |         ------ because it's nested under this `unsafe` block
+...
+LL |                 unsafe { unsf() }
+   |                 ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:219:17
+   |
+LL |         unsafe {
+   |         ------ because it's nested under this `unsafe` block
+...
+LL |                 unsafe { unsf() }
+   |                 ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:239:9
+   |
+LL |         unsafe {
+   |         ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:251:9
    |
 LL |     unsafe fn granular_disallow_op_in_unsafe_fn_3() {
    |     ----------------------------------------------- because it's nested under this `unsafe` fn
@@ -377,7 +377,7 @@ LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:261:13
+  --> $DIR/lint-unused-unsafe.rs:265:13
    |
 LL |         unsafe {
    |         ------ because it's nested under this `unsafe` block
@@ -385,37 +385,37 @@ LL |             unsafe {
    |             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:279:20
+  --> $DIR/lint-unused-unsafe.rs:283:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:288:20
+  --> $DIR/lint-unused-unsafe.rs:292:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:289:24
+  --> $DIR/lint-unused-unsafe.rs:293:24
    |
 LL |             let _ = || unsafe {};
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:290:24
+  --> $DIR/lint-unused-unsafe.rs:294:24
    |
 LL |             let _ = || unsafe {};
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:295:20
+  --> $DIR/lint-unused-unsafe.rs:299:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:305:24
+  --> $DIR/lint-unused-unsafe.rs:309:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -424,7 +424,7 @@ LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:306:24
+  --> $DIR/lint-unused-unsafe.rs:310:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -433,7 +433,7 @@ LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:307:24
+  --> $DIR/lint-unused-unsafe.rs:311:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -442,7 +442,7 @@ LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:317:28
+  --> $DIR/lint-unused-unsafe.rs:321:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -451,13 +451,13 @@ LL |                 let _ = || unsafe { unsf() };
    |                            ^^^^^^ unnecessary `unsafe` block
    |
 note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:315:20
+  --> $DIR/lint-unused-unsafe.rs:319:20
    |
 LL |             #[deny(unused_unsafe)]
    |                    ^^^^^^^^^^^^^
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:318:28
+  --> $DIR/lint-unused-unsafe.rs:322:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -466,7 +466,7 @@ LL |                 let _ = || unsafe { unsf() };
    |                            ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:319:28
+  --> $DIR/lint-unused-unsafe.rs:323:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -475,37 +475,37 @@ LL |                 let _ = || unsafe { unsf() };
    |                            ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:329:20
+  --> $DIR/lint-unused-unsafe.rs:333:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:339:20
+  --> $DIR/lint-unused-unsafe.rs:343:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:340:24
+  --> $DIR/lint-unused-unsafe.rs:344:24
    |
 LL |             let _ = || unsafe {};
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:341:24
+  --> $DIR/lint-unused-unsafe.rs:345:24
    |
 LL |             let _ = || unsafe {};
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:347:20
+  --> $DIR/lint-unused-unsafe.rs:351:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:358:24
+  --> $DIR/lint-unused-unsafe.rs:362:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -514,7 +514,7 @@ LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:359:24
+  --> $DIR/lint-unused-unsafe.rs:363:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -523,7 +523,7 @@ LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:360:24
+  --> $DIR/lint-unused-unsafe.rs:364:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -532,132 +532,7 @@ LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:371:28
-   |
-LL |         let _ = || unsafe {
-   |                    ------ because it's nested under this `unsafe` block
-...
-LL |                 let _ = || unsafe { unsf() };
-   |                            ^^^^^^ unnecessary `unsafe` block
-   |
-note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:369:20
-   |
-LL |             #[deny(unused_unsafe)]
-   |                    ^^^^^^^^^^^^^
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:372:28
-   |
-LL |         let _ = || unsafe {
-   |                    ------ because it's nested under this `unsafe` block
-...
-LL |                 let _ = || unsafe { unsf() };
-   |                            ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:373:28
-   |
-LL |         let _ = || unsafe {
-   |                    ------ because it's nested under this `unsafe` block
-...
-LL |                 let _ = || unsafe { unsf() };
-   |                            ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:383:20
-   |
-LL |         let _ = || unsafe {
-   |                    ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:393:20
-   |
-LL |         let _ = || unsafe {
-   |                    ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:394:24
-   |
-LL |             let _ = || unsafe {};
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:395:24
-   |
-LL |             let _ = || unsafe {};
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:401:20
-   |
-LL |         let _ = || unsafe {
-   |                    ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:402:24
-   |
-LL |     unsafe fn granularity_2() {
-   |     ------------------------- because it's nested under this `unsafe` fn
-LL |         let _ = || unsafe {
-LL |             let _ = || unsafe { unsf() };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:403:24
-   |
-LL |     unsafe fn granularity_2() {
-   |     ------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { unsf() };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:404:24
-   |
-LL |     unsafe fn granularity_2() {
-   |     ------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { unsf() };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:410:20
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-LL |         let _ = || unsafe {
-   |                    ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:412:24
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { unsf() };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:413:24
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { unsf() };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:414:24
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { unsf() };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:425:28
+  --> $DIR/lint-unused-unsafe.rs:375:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -666,13 +541,13 @@ LL |                 let _ = || unsafe { unsf() };
    |                            ^^^^^^ unnecessary `unsafe` block
    |
 note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:423:20
+  --> $DIR/lint-unused-unsafe.rs:373:20
    |
 LL |             #[deny(unused_unsafe)]
    |                    ^^^^^^^^^^^^^
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:426:28
+  --> $DIR/lint-unused-unsafe.rs:376:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -681,7 +556,7 @@ LL |                 let _ = || unsafe { unsf() };
    |                            ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:427:28
+  --> $DIR/lint-unused-unsafe.rs:377:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -690,13 +565,138 @@ LL |                 let _ = || unsafe { unsf() };
    |                            ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:447:20
+  --> $DIR/lint-unused-unsafe.rs:387:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:459:20
+  --> $DIR/lint-unused-unsafe.rs:397:20
+   |
+LL |         let _ = || unsafe {
+   |                    ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:398:24
+   |
+LL |             let _ = || unsafe {};
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:399:24
+   |
+LL |             let _ = || unsafe {};
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:405:20
+   |
+LL |         let _ = || unsafe {
+   |                    ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:406:24
+   |
+LL |     unsafe fn granularity_2() {
+   |     ------------------------- because it's nested under this `unsafe` fn
+LL |         let _ = || unsafe {
+LL |             let _ = || unsafe { unsf() };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:407:24
+   |
+LL |     unsafe fn granularity_2() {
+   |     ------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { unsf() };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:408:24
+   |
+LL |     unsafe fn granularity_2() {
+   |     ------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { unsf() };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:414:20
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+LL |         let _ = || unsafe {
+   |                    ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:416:24
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { unsf() };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:417:24
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { unsf() };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:418:24
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { unsf() };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:429:28
+   |
+LL |         let _ = || unsafe {
+   |                    ------ because it's nested under this `unsafe` block
+...
+LL |                 let _ = || unsafe { unsf() };
+   |                            ^^^^^^ unnecessary `unsafe` block
+   |
+note: the lint level is defined here
+  --> $DIR/lint-unused-unsafe.rs:427:20
+   |
+LL |             #[deny(unused_unsafe)]
+   |                    ^^^^^^^^^^^^^
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:430:28
+   |
+LL |         let _ = || unsafe {
+   |                    ------ because it's nested under this `unsafe` block
+...
+LL |                 let _ = || unsafe { unsf() };
+   |                            ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:431:28
+   |
+LL |         let _ = || unsafe {
+   |                    ------ because it's nested under this `unsafe` block
+...
+LL |                 let _ = || unsafe { unsf() };
+   |                            ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:451:20
+   |
+LL |         let _ = || unsafe {
+   |                    ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:463:20
    |
 LL |     unsafe fn granular_disallow_op_in_unsafe_fn_3() {
    |     ----------------------------------------------- because it's nested under this `unsafe` fn
@@ -704,7 +704,7 @@ LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:473:24
+  --> $DIR/lint-unused-unsafe.rs:477:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -712,37 +712,37 @@ LL |             let _ = || unsafe {
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:492:20
+  --> $DIR/lint-unused-unsafe.rs:496:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:501:20
+  --> $DIR/lint-unused-unsafe.rs:505:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:502:24
+  --> $DIR/lint-unused-unsafe.rs:506:24
    |
 LL |             let _ = || unsafe {};
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:503:24
+  --> $DIR/lint-unused-unsafe.rs:507:24
    |
 LL |             let _ = || unsafe {};
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:508:20
+  --> $DIR/lint-unused-unsafe.rs:512:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:518:24
+  --> $DIR/lint-unused-unsafe.rs:522:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -751,7 +751,7 @@ LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:519:24
+  --> $DIR/lint-unused-unsafe.rs:523:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -760,7 +760,7 @@ LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:520:24
+  --> $DIR/lint-unused-unsafe.rs:524:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -769,7 +769,7 @@ LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:530:28
+  --> $DIR/lint-unused-unsafe.rs:534:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -778,13 +778,13 @@ LL |                 let _ = || unsafe { let _ = || unsf(); };
    |                            ^^^^^^ unnecessary `unsafe` block
    |
 note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:528:20
+  --> $DIR/lint-unused-unsafe.rs:532:20
    |
 LL |             #[deny(unused_unsafe)]
    |                    ^^^^^^^^^^^^^
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:531:28
+  --> $DIR/lint-unused-unsafe.rs:535:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -793,7 +793,7 @@ LL |                 let _ = || unsafe { let _ = || unsf(); };
    |                            ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:532:28
+  --> $DIR/lint-unused-unsafe.rs:536:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -802,37 +802,37 @@ LL |                 let _ = || unsafe { let _ = || unsf(); };
    |                            ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:542:20
+  --> $DIR/lint-unused-unsafe.rs:546:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:552:20
+  --> $DIR/lint-unused-unsafe.rs:556:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:553:24
+  --> $DIR/lint-unused-unsafe.rs:557:24
    |
 LL |             let _ = || unsafe {};
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:554:24
+  --> $DIR/lint-unused-unsafe.rs:558:24
    |
 LL |             let _ = || unsafe {};
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:560:20
+  --> $DIR/lint-unused-unsafe.rs:564:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:571:24
+  --> $DIR/lint-unused-unsafe.rs:575:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -841,7 +841,7 @@ LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:572:24
+  --> $DIR/lint-unused-unsafe.rs:576:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -850,7 +850,7 @@ LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:573:24
+  --> $DIR/lint-unused-unsafe.rs:577:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -859,132 +859,7 @@ LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:584:28
-   |
-LL |         let _ = || unsafe {
-   |                    ------ because it's nested under this `unsafe` block
-...
-LL |                 let _ = || unsafe { let _ = || unsf(); };
-   |                            ^^^^^^ unnecessary `unsafe` block
-   |
-note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:582:20
-   |
-LL |             #[deny(unused_unsafe)]
-   |                    ^^^^^^^^^^^^^
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:585:28
-   |
-LL |         let _ = || unsafe {
-   |                    ------ because it's nested under this `unsafe` block
-...
-LL |                 let _ = || unsafe { let _ = || unsf(); };
-   |                            ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:586:28
-   |
-LL |         let _ = || unsafe {
-   |                    ------ because it's nested under this `unsafe` block
-...
-LL |                 let _ = || unsafe { let _ = || unsf(); };
-   |                            ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:596:20
-   |
-LL |         let _ = || unsafe {
-   |                    ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:606:20
-   |
-LL |         let _ = || unsafe {
-   |                    ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:607:24
-   |
-LL |             let _ = || unsafe {};
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:608:24
-   |
-LL |             let _ = || unsafe {};
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:614:20
-   |
-LL |         let _ = || unsafe {
-   |                    ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:615:24
-   |
-LL |     unsafe fn granularity_2() {
-   |     ------------------------- because it's nested under this `unsafe` fn
-LL |         let _ = || unsafe {
-LL |             let _ = || unsafe { let _ = || unsf(); };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:616:24
-   |
-LL |     unsafe fn granularity_2() {
-   |     ------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { let _ = || unsf(); };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:617:24
-   |
-LL |     unsafe fn granularity_2() {
-   |     ------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { let _ = || unsf(); };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:623:20
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-LL |         let _ = || unsafe {
-   |                    ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:625:24
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { let _ = || unsf(); };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:626:24
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { let _ = || unsf(); };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:627:24
-   |
-LL |     unsafe fn top_level_used_2() {
-   |     ---------------------------- because it's nested under this `unsafe` fn
-...
-LL |             let _ = || unsafe { let _ = || unsf(); };
-   |                        ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:638:28
+  --> $DIR/lint-unused-unsafe.rs:588:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -993,13 +868,13 @@ LL |                 let _ = || unsafe { let _ = || unsf(); };
    |                            ^^^^^^ unnecessary `unsafe` block
    |
 note: the lint level is defined here
-  --> $DIR/lint-unused-unsafe.rs:636:20
+  --> $DIR/lint-unused-unsafe.rs:586:20
    |
 LL |             #[deny(unused_unsafe)]
    |                    ^^^^^^^^^^^^^
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:639:28
+  --> $DIR/lint-unused-unsafe.rs:589:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -1008,7 +883,7 @@ LL |                 let _ = || unsafe { let _ = || unsf(); };
    |                            ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:640:28
+  --> $DIR/lint-unused-unsafe.rs:590:28
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -1017,13 +892,138 @@ LL |                 let _ = || unsafe { let _ = || unsf(); };
    |                            ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:660:20
+  --> $DIR/lint-unused-unsafe.rs:600:20
    |
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:672:20
+  --> $DIR/lint-unused-unsafe.rs:610:20
+   |
+LL |         let _ = || unsafe {
+   |                    ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:611:24
+   |
+LL |             let _ = || unsafe {};
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:612:24
+   |
+LL |             let _ = || unsafe {};
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:618:20
+   |
+LL |         let _ = || unsafe {
+   |                    ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:619:24
+   |
+LL |     unsafe fn granularity_2() {
+   |     ------------------------- because it's nested under this `unsafe` fn
+LL |         let _ = || unsafe {
+LL |             let _ = || unsafe { let _ = || unsf(); };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:620:24
+   |
+LL |     unsafe fn granularity_2() {
+   |     ------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { let _ = || unsf(); };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:621:24
+   |
+LL |     unsafe fn granularity_2() {
+   |     ------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { let _ = || unsf(); };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:627:20
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+LL |         let _ = || unsafe {
+   |                    ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:629:24
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { let _ = || unsf(); };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:630:24
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { let _ = || unsf(); };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:631:24
+   |
+LL |     unsafe fn top_level_used_2() {
+   |     ---------------------------- because it's nested under this `unsafe` fn
+...
+LL |             let _ = || unsafe { let _ = || unsf(); };
+   |                        ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:642:28
+   |
+LL |         let _ = || unsafe {
+   |                    ------ because it's nested under this `unsafe` block
+...
+LL |                 let _ = || unsafe { let _ = || unsf(); };
+   |                            ^^^^^^ unnecessary `unsafe` block
+   |
+note: the lint level is defined here
+  --> $DIR/lint-unused-unsafe.rs:640:20
+   |
+LL |             #[deny(unused_unsafe)]
+   |                    ^^^^^^^^^^^^^
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:643:28
+   |
+LL |         let _ = || unsafe {
+   |                    ------ because it's nested under this `unsafe` block
+...
+LL |                 let _ = || unsafe { let _ = || unsf(); };
+   |                            ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:644:28
+   |
+LL |         let _ = || unsafe {
+   |                    ------ because it's nested under this `unsafe` block
+...
+LL |                 let _ = || unsafe { let _ = || unsf(); };
+   |                            ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:664:20
+   |
+LL |         let _ = || unsafe {
+   |                    ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:676:20
    |
 LL |     unsafe fn granular_disallow_op_in_unsafe_fn_3() {
    |     ----------------------------------------------- because it's nested under this `unsafe` fn
@@ -1031,7 +1031,7 @@ LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:686:24
+  --> $DIR/lint-unused-unsafe.rs:690:24
    |
 LL |         let _ = || unsafe {
    |                    ------ because it's nested under this `unsafe` block
@@ -1039,13 +1039,13 @@ LL |             let _ = || unsafe {
    |                        ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:717:29
+  --> $DIR/lint-unused-unsafe.rs:721:29
    |
 LL |             let _ = async { unsafe {
    |                             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:724:33
+  --> $DIR/lint-unused-unsafe.rs:728:33
    |
 LL |             let _ = async { unsafe {
    |                             ------ because it's nested under this `unsafe` block
@@ -1054,7 +1054,7 @@ LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:725:33
+  --> $DIR/lint-unused-unsafe.rs:729:33
    |
 LL |             let _ = async { unsafe {
    |                             ------ because it's nested under this `unsafe` block
@@ -1063,7 +1063,7 @@ LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:726:33
+  --> $DIR/lint-unused-unsafe.rs:730:33
    |
 LL |             let _ = async { unsafe {
    |                             ------ because it's nested under this `unsafe` block
@@ -1072,13 +1072,13 @@ LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:731:29
+  --> $DIR/lint-unused-unsafe.rs:735:29
    |
 LL |             let _ = async { unsafe {
    |                             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:732:33
+  --> $DIR/lint-unused-unsafe.rs:736:33
    |
 LL |     async unsafe fn async_blocks() {
    |     ------------------------------ because it's nested under this `unsafe` fn
@@ -1087,31 +1087,13 @@ LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:733:33
+  --> $DIR/lint-unused-unsafe.rs:737:33
    |
 LL |     async unsafe fn async_blocks() {
    |     ------------------------------ because it's nested under this `unsafe` fn
 ...
 LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:734:33
-   |
-LL |     async unsafe fn async_blocks() {
-   |     ------------------------------ because it's nested under this `unsafe` fn
-...
-LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
-   |                                 ^^^^^^ unnecessary `unsafe` block
-
-error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:736:29
-   |
-LL |     async unsafe fn async_blocks() {
-   |     ------------------------------ because it's nested under this `unsafe` fn
-...
-LL |             let _ = async { unsafe {
-   |                             ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:738:33
@@ -1123,7 +1105,16 @@ LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:739:33
+  --> $DIR/lint-unused-unsafe.rs:740:29
+   |
+LL |     async unsafe fn async_blocks() {
+   |     ------------------------------ because it's nested under this `unsafe` fn
+...
+LL |             let _ = async { unsafe {
+   |                             ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:742:33
    |
 LL |     async unsafe fn async_blocks() {
    |     ------------------------------ because it's nested under this `unsafe` fn
@@ -1132,7 +1123,16 @@ LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
 
 error: unnecessary `unsafe` block
-  --> $DIR/lint-unused-unsafe.rs:740:33
+  --> $DIR/lint-unused-unsafe.rs:743:33
+   |
+LL |     async unsafe fn async_blocks() {
+   |     ------------------------------ because it's nested under this `unsafe` fn
+...
+LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
+   |                                 ^^^^^^ unnecessary `unsafe` block
+
+error: unnecessary `unsafe` block
+  --> $DIR/lint-unused-unsafe.rs:744:33
    |
 LL |     async unsafe fn async_blocks() {
    |     ------------------------------ because it's nested under this `unsafe` fn
