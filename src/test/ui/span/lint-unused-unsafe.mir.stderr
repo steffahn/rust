@@ -36,7 +36,7 @@ LL | unsafe fn bad5() { unsafe { unsf() } }
    | |
    | because it's nested under this `unsafe` fn
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
    = note: `#[allow(unsafe_op_in_unsafe_fn)]` on by default
 
 error: unnecessary `unsafe` block
@@ -60,7 +60,7 @@ LL |     unsafe {
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:71:9
@@ -281,7 +281,7 @@ LL |         unsafe {
 LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:191:13
    |
@@ -297,7 +297,7 @@ LL |     unsafe fn granularity_2() {
 LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:196:13
@@ -308,7 +308,7 @@ LL |     unsafe fn granularity_2() {
 LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:202:9
@@ -318,7 +318,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:200:13
    |
@@ -334,7 +334,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:205:13
@@ -345,7 +345,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:206:13
@@ -356,7 +356,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |             unsafe { unsf() }
    |             ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:217:17
@@ -405,7 +405,7 @@ LL |     unsafe fn granular_disallow_op_in_unsafe_fn_3() {
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:249:13
    |
@@ -639,7 +639,7 @@ LL |         let _ = || unsafe {
 LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:403:13
    |
@@ -655,7 +655,7 @@ LL |     unsafe fn granularity_2() {
 LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:408:24
@@ -666,7 +666,7 @@ LL |     unsafe fn granularity_2() {
 LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:414:20
@@ -676,7 +676,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:412:13
    |
@@ -692,7 +692,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:417:24
@@ -703,7 +703,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:418:24
@@ -714,7 +714,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |             let _ = || unsafe { unsf() };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:429:28
@@ -763,7 +763,7 @@ LL |     unsafe fn granular_disallow_op_in_unsafe_fn_3() {
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:461:13
    |
@@ -997,7 +997,7 @@ LL |         let _ = || unsafe {
 LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:616:13
    |
@@ -1013,7 +1013,7 @@ LL |     unsafe fn granularity_2() {
 LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:621:24
@@ -1024,7 +1024,7 @@ LL |     unsafe fn granularity_2() {
 LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:627:20
@@ -1034,7 +1034,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:625:13
    |
@@ -1050,7 +1050,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:630:24
@@ -1061,7 +1061,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:631:24
@@ -1072,7 +1072,7 @@ LL |     unsafe fn top_level_used_2() {
 LL |             let _ = || unsafe { let _ = || unsf(); };
    |                        ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:642:28
@@ -1121,7 +1121,7 @@ LL |     unsafe fn granular_disallow_op_in_unsafe_fn_3() {
 LL |         let _ = || unsafe {
    |                    ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:674:13
    |
@@ -1144,7 +1144,7 @@ LL |     unsafe fn multiple_unsafe_op_in_unsafe_fn_allows() {
 LL |         unsafe {
    |         ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:721:21
    |
@@ -1199,7 +1199,7 @@ LL |     async unsafe fn async_blocks() {
 LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 note: the lint level is defined here
   --> $DIR/lint-unused-unsafe.rs:747:17
    |
@@ -1215,7 +1215,7 @@ LL |     async unsafe fn async_blocks() {
 LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:752:33
@@ -1226,7 +1226,7 @@ LL |     async unsafe fn async_blocks() {
 LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:754:29
@@ -1237,7 +1237,7 @@ LL |     async unsafe fn async_blocks() {
 LL |             let _ = async { unsafe {
    |                             ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:756:33
@@ -1248,7 +1248,7 @@ LL |     async unsafe fn async_blocks() {
 LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:757:33
@@ -1259,7 +1259,7 @@ LL |     async unsafe fn async_blocks() {
 LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:758:33
@@ -1270,7 +1270,7 @@ LL |     async unsafe fn async_blocks() {
 LL |                 let _ = async { unsafe { let _ = async { unsf() }; }};
    |                                 ^^^^^^ unnecessary `unsafe` block
    |
-   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn
+   = note: this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe fn`
 
 error: unnecessary `unsafe` block
   --> $DIR/lint-unused-unsafe.rs:768:22

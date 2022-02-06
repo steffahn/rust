@@ -122,8 +122,8 @@ pub enum UnusedUnsafe {
     // `unsafe` block nested under another (used) `unsafe` block
     // ``… because it's nested under this `unsafe` block``
     InUnsafeBlock(hir::HirId),
-    // `unsafe` block nested under `unsafe` fn
-    // ``… because it's nested under this `unsafe` fn``
+    // `unsafe` block nested under `unsafe fn`
+    // ``… because it's nested under this `unsafe fn` ``
     //
     // the second HirId here indicates the first usage of the `unsafe` block,
     // which allows retrival of the LintLevelSource for why that operation would

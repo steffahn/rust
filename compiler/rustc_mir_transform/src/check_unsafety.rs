@@ -548,11 +548,21 @@ fn report_unused_unsafe(tcx: TyCtxt<'_>, kind: UnusedUnsafe, id: HirId) {
                 db.span_label(
                     tcx.sess.source_map().guess_head_span(tcx.hir().span(id)),
                     format!("because it's nested under this `unsafe` fn"),
+                )
+                .note(
+                    "this `unsafe` block does contain unsafe operations, \
+                    but those are already allowed in an `unsafe fn`",
                 );
-                db.note("this `unsafe` block does contain unsafe operations, but those are already allowed in an `unsafe` fn");
-                let (level, source) = tcx.lint_level_at_node(UNSAFE_OP_IN_UNSAFE_FN, usage_lint_root);
+                let (level, source) =
+                    tcx.lint_level_at_node(UNSAFE_OP_IN_UNSAFE_FN, usage_lint_root);
                 assert_eq!(level, Level::Allow);
-                lint::explain_lint_level_source(tcx.sess, UNSAFE_OP_IN_UNSAFE_FN, Level::Allow, source, &mut db);
+                lint::explain_lint_level_source(
+                    tcx.sess,
+                    UNSAFE_OP_IN_UNSAFE_FN,
+                    Level::Allow,
+                    source,
+                    &mut db,
+                );
             }
         }
 
