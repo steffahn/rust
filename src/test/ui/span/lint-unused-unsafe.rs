@@ -715,6 +715,20 @@ mod additional_tests_extra {
         };
     }
 
+    #[warn(unsafe_op_in_unsafe_fn)]
+    unsafe fn multiple_unsafe_op_in_unsafe_fn_allows() {
+        unsafe { //~ ERROR: unnecessary `unsafe` block
+            #[allow(unsafe_op_in_unsafe_fn)]
+            {
+                unsf();
+            }
+            #[allow(unsafe_op_in_unsafe_fn)]
+            {
+                unsf();
+            }
+        }
+    }
+
     async unsafe fn async_blocks() {
         #[deny(unsafe_op_in_unsafe_fn)]
         {
