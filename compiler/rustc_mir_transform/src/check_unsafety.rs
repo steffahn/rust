@@ -5,7 +5,6 @@ use rustc_hir::def_id::{DefId, LocalDefId};
 use rustc_hir::hir_id::HirId;
 use rustc_hir::intravisit;
 use rustc_hir::Node;
-use rustc_middle::hir::nested_filter;
 use rustc_middle::mir::visit::{MutatingUseContext, PlaceContext, Visitor};
 use rustc_middle::mir::*;
 use rustc_middle::ty::query::Providers;
@@ -409,11 +408,6 @@ struct UnusedUnsafeVisitor<'a, 'tcx> {
 }
 
 impl<'tcx> intravisit::Visitor<'tcx> for UnusedUnsafeVisitor<'_, 'tcx> {
-    type NestedFilter = nested_filter::OnlyBodies;
-    fn nested_visit_map(&mut self) -> Self::Map {
-        self.tcx.hir()
-    }
-
     fn visit_block(&mut self, block: &'tcx hir::Block<'tcx>) {
         if let hir::BlockCheckMode::UnsafeBlock(hir::UnsafeSource::UserProvided) = block.rules {
             let used = match self.tcx.lint_level_at_node(UNUSED_UNSAFE, block.hir_id) {
@@ -440,7 +434,18 @@ impl<'tcx> intravisit::Visitor<'tcx> for UnusedUnsafeVisitor<'_, 'tcx> {
         intravisit::walk_block(self, block);
     }
 
-    fn visit_anon_const(&mut self, _c: &'tcx hir::AnonConst) {}
+    fn visit_fn(
+        &mut self,
+        fk: intravisit::FnKind<'tcx>,
+        _fd: &'tcx hir::FnDecl<'tcx>,
+        b: hir::BodyId,
+        _s: rustc_span::Span,
+        _id: HirId,
+    ) {
+        if matches!(fk, intravisit::FnKind::Closure) {
+            self.visit_body(self.tcx.hir().body(b))
+        }
+    }
 }
 
 fn check_unused_unsafe(
