@@ -2,10 +2,10 @@
 
 
 // edition:2018
-// revisions: mir
+// // revisions: mir
 
-// // revisions: mir thir
-// // [thir]compile-flags: -Zthir-unsafeck
+// revisions: mir thir
+// [thir]compile-flags: -Zthir-unsafeck
 
 #![allow(dead_code)]
 #![deny(unused_unsafe)]
