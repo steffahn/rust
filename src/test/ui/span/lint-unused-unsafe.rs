@@ -2,8 +2,6 @@
 
 
 // edition:2018
-// // revisions: mir
-
 // revisions: mir thir
 // [thir]compile-flags: -Zthir-unsafeck
 
